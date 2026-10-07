@@ -1,0 +1,61 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+
+modules:
+
+  # -----------------------------------------------
+  # SwayFX repository
+  # -----------------------------------------------
+
+  - type: dnf
+    repos:
+      copr:
+        - swayfx/swayfx
+
+
+  # -----------------------------------------------
+  # SwayFx packages
+  # -----------------------------------------------
+
+  - type: dnf
+    install:
+      install-weak-deps: false
+      packages:
+        # SwayFX
+        - swayfx
+
+        # Sway ecosystem
+        - swayidle
+        - swaylock
+
+        # SwayFX support components
+        - brightnessctl
+        - playerctl
+
+        # UWSM
+        - uwsm
+
+        # Wayland support
+        # - xdg-desktop-portal          # installed in base-main
+        - xdg-desktop-portal-wlr
+        - wl-clipboard
+
+        # XWayland
+        - xorg-x11-server-Xwayland
+
+        # Launcher
+        - dmenu-wayland  
+
+        # Authentication
+        - gnome-keyring
+        - xfce-polkit
+
+
+  # -----------------------------------------------
+  # SwayFX - configuration
+  # -----------------------------------------------
+
+  #- type: files
+  #  files:
+  #    - source: rootfs/swayfx
+  #      destination: /

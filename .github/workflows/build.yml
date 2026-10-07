@@ -1,0 +1,66 @@
+name: Build Swanite
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+
+  workflow_dispatch:
+
+  schedule:
+    - cron: "0 3 * * *"
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+
+  build:
+
+    strategy:
+      matrix:
+        recipe:
+          - Swanite
+
+    name: Build ${{ matrix.recipe }}
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+
+      # Основной репозиторий
+      - name: Checkout Hyprite
+        uses: actions/checkout@v7
+
+      # Общий репозиторий
+      - name: Checkout Common
+        uses: actions/checkout@v7
+        with:
+          repository: aspenblue/base
+          ref: main
+          path: tmp/base
+
+      # Кладём общие recipes туда, где BlueBuild их ожидает
+      - name: Install common recipes
+        run: |
+          cp -a --update=none tmp/base/recipes/* recipes/
+
+      # Кладём общие files
+      - name: Install common files
+        run: |
+          cp -a --update=none tmp/base/files/* files/
+
+      - name: Build image
+        uses: blue-build/github-action@v1
+        with:
+          recipe: ${{ matrix.recipe }}.yml
+          skip_checkout: true
+          cosign_private_key: ${{ secrets.SIGNING_SECRET }}
+          registry_token: ${{ github.token }}
+          maximize_build_space: true
