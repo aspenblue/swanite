@@ -9,5 +9,5 @@ modules:
 
   - type: files
     files:
-      - source: rootfs/noctalia-hyprland-connector
+      - source: rootfs/noctalia-sway-connector
         destination: /
