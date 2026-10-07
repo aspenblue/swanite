@@ -23,7 +23,7 @@ jobs:
     strategy:
       matrix:
         recipe:
-          - Swanite
+          - swanite
 
     name: Build ${{ matrix.recipe }}
     runs-on: ubuntu-latest
