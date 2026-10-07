@@ -33,15 +33,15 @@ modules:
         - playerctl
 
         # UWSM
-        - uwsm
+        # - uwsm
 
         # Wayland support
         # - xdg-desktop-portal          # installed in base-main
         - xdg-desktop-portal-wlr
-        - wl-clipboard
+        # - wl-clipboard                # installed in base-main
 
         # XWayland
-        - xorg-x11-server-Xwayland
+        # - xorg-x11-server-Xwayland    # installed in base-main
 
         # Launcher
         - dmenu-wayland  
