@@ -3,7 +3,7 @@
 
 version: 1
 
-name: hyprite
+name: swanite
 
 description: "Personal Fedora Atomic image based on Universal Blue, with Hyprland, Noctalia and Noctalia Greeter."
 
