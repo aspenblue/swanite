@@ -4,6 +4,8 @@
 default_border pixel 2
 default_floating_border pixel 2
 
+default_dim_inactive 0.2
+
 gaps inner 8
 gaps outer 8
 
