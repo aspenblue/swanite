@@ -19,6 +19,7 @@ modules:
   - from-file: 60-shell/common/noctaliagreeter.yml
   - from-file: 60-shell/swanite/noctalia-sway-connector.yml
   - from-file: 70-desktop/common/apps.yml
+  - from-file: 70-desktop/common/foot.yml
   - from-file: 70-desktop/common/xfce/xfce-desktop.yml
   - from-file: 70-desktop/common/xfce/xfce-noctalia-connector.yml
 
