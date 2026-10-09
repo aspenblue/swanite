@@ -55,7 +55,7 @@ modules:
   # SwayFX - configuration
   # -----------------------------------------------
 
-  #- type: files
-  #  files:
-  #    - source: rootfs/swayfx
-  #      destination: /
+  - type: files
+    files:
+      - source: rootfs/swayfx
+        destination: /

@@ -28,6 +28,7 @@ jobs:
       matrix:
         recipe:
           - swanite
+          - swanite-lite
 
     name: Build ${{ matrix.recipe }}
     runs-on: ubuntu-latest
