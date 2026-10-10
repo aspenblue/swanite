@@ -48,7 +48,6 @@ modules:
 
         # Authentication
         - gnome-keyring
-        - xfce-polkit
 
 
   # -----------------------------------------------
